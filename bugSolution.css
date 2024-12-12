@@ -1,0 +1,22 @@
+To fix the `calc()` function issues, ensure that:
+
+1. **Unit Consistency:**  Maintain consistent units within each `calc()` expression. Don't mix pixels with percentages or ems without proper conversion.
+2. **Correct Nesting:** Avoid overly complex nesting of `calc()` functions.  Break down complex calculations into simpler, more manageable expressions.  If you have nested `calc()` expressions, make sure the order of operations is clear and correct.  
+3. **Proper Parentheses:** Double check that opening and closing parentheses match correctly in nested expressions. Missing or misplaced parentheses can easily lead to calculation errors.
+
+Example of a corrected `calc()` expression:
+
+```css
+/* Correct: Consistent units (px) and proper nesting */
+width: calc(100px + 20px); /* 120px */
+height: calc(50% - 10px);
+```
+
+Example of an incorrect `calc()` expression and its correction:
+```css
+/* Incorrect: Mixing units without conversion and improper nesting */
+width: calc(calc(50% + 100px) + 2em); /* Error prone */
+
+/* Correct: Consistent units (using px equivalent of 2em) and simplified expression */
+width: calc((50% + 100px) + 32px); /* Assuming 2em is approximately 32px */
+```
